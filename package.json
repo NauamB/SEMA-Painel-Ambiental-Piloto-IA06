@@ -1,0 +1,8 @@
+{
+  "name": "sema-painel-ambiental-piloto-ia06",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Protótipo demonstrativo de painel de acompanhamento ambiental com dados fictícios",
+  "scripts": { "test:e2e": "playwright test" },
+  "devDependencies": { "@playwright/test": "^1.50.0", "http-server": "^14.1.1" }
+}

@@ -1,0 +1,6 @@
+Cenario,Autonomia sugerida,Risco principal,Controle humano
+Criar interface com dados ambientais ficticios,Autonomia com revisao,Exposicao acidental de dados reais,Revisar conteudo e rotulos demonstrativos
+Elaborar testes automatizados,Autonomia com revisao,Cobertura incompleta ou testes incorretos,Revisar cenarios e executar testes
+Alterar codigo existente,Condicionada a revisao,Regressao ou mudanca fora do escopo,Revisar diff e executar testes
+Publicar nova versao,Requer aprovacao humana,Exposicao indevida ou indisponibilidade,Validar conteudo e testes antes do deploy
+Excluir ou alterar dados em ambiente real,Autorizacao explicita,Perda de dados ou impacto institucional,Confirmar autorizacao, backup e plano de recuperacao

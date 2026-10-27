@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Protótipo demonstrativo de painel de acompanhamento ambiental para uma secretaria estadual de meio ambiente.">
+  <title>Painel Ambiental | SEMA-MT</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#" aria-label="Painel Ambiental - página inicial">
+        <span class="brand-symbol" aria-hidden="true">
+          <svg viewBox="0 0 48 48" role="img" aria-label=""><path d="M39 7C22 7 10 13 9 26c-.5 7 4 12 11 12 14 0 19-17 19-31Z"/><path class="leaf-vein" d="M8 42c7-12 15-19 27-29"/></svg>
+        </span>
+        <span class="brand-text"><strong>SEMA-MT</strong><small>Secretaria de Estado de Meio Ambiente</small></span>
+      </a>
+      <div class="header-meta">
+        <span class="environment-tag"><span class="status-dot"></span> AMBIENTE DEMONSTRATIVO</span>
+        <button id="menu-toggle" class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      </div>
+    </div>
+    <nav id="main-nav" class="main-nav" aria-label="Navegação principal">
+      <a class="nav-link active" href="#visao-geral">Visão geral</a>
+      <a class="nav-link" href="#processos">Processos ambientais</a>
+      <a class="nav-link" href="#pendencias">Pendências</a>
+      <a class="nav-link" href="#comunicados">Comunicados</a>
+    </nav>
+  </header>
+
+  <main id="conteudo" class="page-shell">
+    <section class="welcome" id="visao-geral">
+      <div class="welcome-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> GESTÃO AMBIENTAL · PAINEL INTERNO</p>
+        <h1>Acompanhamento<br><em>ambiental</em></h1>
+        <p class="welcome-description">Uma visão demonstrativa de indicadores, processos e atividades para apoiar a organização das informações ambientais.</p>
+        <p class="demo-warning"><span aria-hidden="true">ⓘ</span> Protótipo acadêmico. Todos os dados desta página são fictícios e não representam indicadores oficiais da SEMA-MT.</p>
+      </div>
+      
+<div class="landscape-card">
+  <img
+    src="paisagem-sema.png"
+    alt="Paisagem natural representando o meio ambiente de Mato Grosso"
+    class="imagem-paisagem"
+  />
+  </div>
+
+      </div>
+    </section>
+
+    <section class="section-block" aria-labelledby="indicators-heading">
+      <div class="section-heading">
+        <div><p class="eyebrow">RESUMO EXECUTIVO</p><h2 id="indicators-heading">Indicadores de acompanhamento</h2></div>
+        <span class="period-label">Período ilustrativo · 2026</span>
+      </div>
+      <div class="metric-grid">
+        <article class="metric-card metric-green">
+          <div class="metric-top"><span>Processos monitorados</span><span class="metric-icon" aria-hidden="true">◎</span></div>
+          <strong id="metric-total">24</strong><small>Registros fictícios no painel</small>
+          <div class="metric-track"><span style="width:72%"></span></div>
+        </article>
+        <article class="metric-card">
+          <div class="metric-top"><span>Em análise</span><span class="metric-icon" aria-hidden="true">◷</span></div>
+          <strong id="metric-analysis">8</strong><small>Exemplo de fila de trabalho</small>
+          <div class="metric-track track-amber"><span style="width:42%"></span></div>
+        </article>
+        <article class="metric-card">
+          <div class="metric-top"><span>Concluídos</span><span class="metric-icon" aria-hidden="true">✓</span></div>
+          <strong id="metric-done">12</strong><small>Exemplo de registros finalizados</small>
+          <div class="metric-track track-blue"><span style="width:60%"></span></div>
+        </article>
+        <article class="metric-card">
+          <div class="metric-top"><span>Com pendências</span><span class="metric-icon" aria-hidden="true">!</span></div>
+          <strong id="metric-pending">4</strong><small>Necessitam de acompanhamento</small>
+          <div class="metric-track track-red"><span style="width:24%"></span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-block process-section" id="processos" aria-labelledby="process-heading">
+      <div class="section-heading process-heading">
+        <div><p class="eyebrow">ACOMPANHAMENTO OPERACIONAL</p><h2 id="process-heading">Processos ambientais</h2><p class="section-subtitle">Lista ilustrativa para demonstrar filtros, busca e atualização de status.</p></div>
+        <button id="add-process" class="button button-primary" type="button"><span aria-hidden="true">＋</span> Novo registro</button>
+      </div>
+      <div class="table-tools">
+        <label class="search-box"><span aria-hidden="true">⌕</span><span class="visually-hidden">Buscar processo</span><input id="search-input" type="search" placeholder="Buscar por processo, tema ou responsável..."></label>
+        <label class="filter-box"><span>Status</span><select id="status-filter"><option value="Todos">Todos os status</option><option value="Em análise">Em análise</option><option value="Em andamento">Em andamento</option><option value="Concluído">Concluído</option><option value="Pendente">Pendente</option></select></label>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Processo / atividade</th><th scope="col">Tema</th><th scope="col">Responsável fictício</th><th scope="col">Status</th><th scope="col">Ação</th></tr></thead>
+          <tbody id="process-table-body"></tbody>
+        </table>
+      </div>
+      <p id="no-results" class="no-results" hidden>Nenhum registro corresponde à busca ou ao filtro selecionado.</p>
+      <div class="table-footer"><span id="result-count">Exibindo 4 registros fictícios</span><span>Dados ilustrativos · Sem integração com sistemas oficiais</span></div>
+    </section>
+
+    <section class="bottom-grid">
+      <article class="info-panel" id="pendencias">
+        <div class="panel-heading"><span class="panel-icon amber-icon" aria-hidden="true">!</span><div><p class="eyebrow">ATENÇÃO</p><h2>Pontos de acompanhamento</h2></div></div>
+        <ul class="attention-list">
+          <li><span class="list-dot amber-dot"></span><div><strong>Atualização de registros</strong><p>Conferir periodicamente se os dados demonstrativos estão atualizados.</p></div></li>
+          <li><span class="list-dot green-dot"></span><div><strong>Revisão de informações</strong><p>Validar a consistência antes de qualquer divulgação institucional.</p></div></li>
+          <li><span class="list-dot blue-dot"></span><div><strong>Rastreabilidade</strong><p>Registrar responsável, data e justificativa para alterações reais.</p></div></li>
+        </ul>
+      </article>
+      <article class="info-panel" id="comunicados">
+        <div class="panel-heading"><span class="panel-icon green-icon" aria-hidden="true">↗</span><div><p class="eyebrow">MURAL</p><h2>Comunicados e orientações</h2></div></div>
+        <div class="notice-card"><span class="notice-date">MODELO</span><strong>Boas práticas de qualidade de dados</strong><p>Antes de compartilhar indicadores, confira fonte, período de referência, responsável e critérios de cálculo.</p><a href="#processos">Ver registros demonstrativos <span aria-hidden="true">→</span></a></div>
+        <div class="notice-card notice-secondary"><span class="notice-date">LEMBRETE</span><strong>Uso responsável do protótipo</strong><p>Não inserir dados pessoais, informações sigilosas ou dados operacionais reais nesta demonstração.</p></div>
+      </article>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><span class="footer-leaf">❧</span><span><strong>SEMA-MT · Protótipo demonstrativo</strong><small>Conceito acadêmico para gestão e acompanhamento ambiental</small></span></div>
+      <span class="footer-disclaimer">Não é sistema oficial nem fonte de dados institucionais.</span>
+    </footer>
+  </main>
+
+  <dialog id="process-dialog" class="process-dialog">
+    <form id="process-form" method="dialog">
+      <div class="dialog-header"><div><p class="eyebrow">NOVO REGISTRO</p><h2>Adicionar processo demonstrativo</h2></div><button id="close-dialog" class="close-button" type="button" aria-label="Fechar">×</button></div>
+      <p class="dialog-note">Use apenas informações fictícias. Este protótipo não envia dados para nenhum sistema.</p>
+      <label for="process-name">Processo ou atividade <span>*</span></label><input id="process-name" name="process-name" maxlength="100" required placeholder="Ex.: Análise de relatório ambiental">
+      <label for="process-theme">Tema ambiental <span>*</span></label><select id="process-theme" required><option value="">Selecione um tema</option><option>Licenciamento</option><option>Monitoramento</option><option>Flora e fauna</option><option>Recursos hídricos</option><option>Educação ambiental</option><option>Gestão interna</option></select>
+      <label for="process-owner">Responsável fictício <span>*</span></label><input id="process-owner" maxlength="60" required placeholder="Ex.: Equipe Demonstrativa A">
+      <label for="process-status">Status inicial</label><select id="process-status"><option>Em análise</option><option>Em andamento</option><option>Concluído</option><option>Pendente</option></select>
+      <p id="dialog-error" class="form-error" role="alert" hidden></p>
+      <div class="dialog-actions"><button id="cancel-dialog" class="button button-secondary" type="button">Cancelar</button><button class="button button-primary" type="submit">Adicionar registro</button></div>
+    </form>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>
